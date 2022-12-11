@@ -19,12 +19,9 @@
             android:id="@+id/ivImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_rectangle_clickable"
             android:elevation="10dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintHeight_max="150dp"
+            android:adjustViewBounds="true"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="10dp"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <androidx.appcompat.widget.AppCompatTextView
