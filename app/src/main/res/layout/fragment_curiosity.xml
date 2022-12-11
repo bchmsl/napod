@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".CuriosityFragment">
+
+    <View
+        android:id="@+id/viewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/alegreya_sans_bold_italic"
+        android:text="@string/curiosity"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewHeader"
+        app:layout_constraintStart_toStartOf="@+id/viewHeader"
+        app:layout_constraintTop_toTopOf="@+id/viewHeader" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPreviousDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="@color/dark_grey"
+        app:icon="@drawable/ic_arrow_back"
+        app:iconGravity="textStart"
+        app:iconPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/btnChangeDate"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/btnChangeDate"
+        app:layout_constraintTop_toTopOf="@id/btnChangeDate"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnChangeDate"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/dark_grey"
+        android:fontFamily="@font/alegreya_sans_bold_italic"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewHeader"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNextDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:backgroundTint="@color/dark_grey"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="textEnd"
+        app:iconPadding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/btnChangeDate"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toEndOf="@id/btnChangeDate"
+        app:layout_constraintTop_toTopOf="@id/btnChangeDate"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCuriosity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:paddingTop="50dp"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeader"
+        app:spanCount="2"
+        tools:itemCount="20"
+        tools:listitem="@layout/layout_curiosity" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

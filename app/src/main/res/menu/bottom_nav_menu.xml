@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_earth"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/curiosityFragment"
+        android:icon="@drawable/ic_marsrover"
+        android:title="@string/curiosity" />
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/ic_heart_unchecked"
+        android:title="@string/favorites" />
+
+    <item
+        android:id="@+id/preferencesFragment"
+        android:icon="@drawable/ic_wrench"
+        android:title="@string/preferences" />
+</menu>
