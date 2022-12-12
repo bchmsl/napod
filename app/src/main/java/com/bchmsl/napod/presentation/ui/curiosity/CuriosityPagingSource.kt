@@ -29,7 +29,7 @@ class CuriosityPagingSource(
         repository.getCuriosityPhotos(true, page, date, sol).collect { resource ->
             when (resource) {
                 is Resource.Success -> loadResult = LoadResult.Page(
-                    data = resource.data.domainToCuriosityUiModelList(),
+                    data = resource.data.domainToCuriosityUiModelList().toList(),
                     prevKey = if (page == STARTING_PAGE_INDEX) null else page - 1,
                     nextKey = if (resource.data.isEmpty()) null else page + 1
                 )

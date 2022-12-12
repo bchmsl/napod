@@ -5,6 +5,7 @@ import androidx.core.view.isVisible
 import androidx.viewbinding.ViewBinding
 import com.bchmsl.napod.presentation.model.ViewState
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 
 suspend fun <T: ViewState<D>, D> Flow<T>.collectViewState(binding: ViewBinding,progressBar: ProgressBar? = null, block: suspend (data: D) -> Unit) {
     collect{ viewState ->
@@ -18,4 +19,8 @@ suspend fun <T: ViewState<D>, D> Flow<T>.collectViewState(binding: ViewBinding,p
             error.localizedMessage?.let { it1 -> binding.root.makeSnackbar(it1, true) }
         }
     }
+}
+
+suspend fun MutableStateFlow<Boolean>.loading(isLoading: Boolean){
+    this.value = isLoading
 }
