@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.bchmsl.napod.presentation.ui.home.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_apodOpenedFragment"
+            app:destination="@id/apodOpenedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.bchmsl.napod.presentation.ui.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="com.bchmsl.napod.presentation.ui.preferences.PreferencesFragment"
+        android:label="fragment_preferences"
+        tools:layout="@layout/fragment_preferences" />
+    <fragment
+        android:id="@+id/curiosityFragment"
+        android:name="com.bchmsl.napod.presentation.ui.curiosity.CuriosityFragment"
+        android:label="fragment_curiosity"
+        tools:layout="@layout/fragment_curiosity" />
+    <fragment
+        android:id="@+id/apodOpenedFragment"
+        android:name="com.bchmsl.napod.presentation.ui.home.apod_opened.ApodOpenedFragment"
+        android:label="fragment_apod_opened"
+        tools:layout="@layout/fragment_apod_opened" >
+        <argument
+            android:name="apod"
+            app:argType="com.bchmsl.napod.presentation.ui.home.model.ApodUiModel" />
+    </fragment>
+</navigation>
